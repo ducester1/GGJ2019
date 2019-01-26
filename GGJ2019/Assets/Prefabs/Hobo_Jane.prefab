@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7595729116755991435}
   - component: {fileID: 7595729116755991436}
   - component: {fileID: 8879049599074381413}
-  - component: {fileID: 8319325376902475634}
+  - component: {fileID: 148121032231417629}
   m_Layer: 0
-  m_Name: Hobo_Joe
+  m_Name: Hobo_Jane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
         m_MethodName: set_material
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 31c4bc20c4756f548bcdd3e26e5c360f,
+          m_ObjectArgument: {fileID: 2100000, guid: 8870175ee2e99bc42aa86b17e5b037eb,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
         m_MethodName: set_material
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 70eb4e83e9b52c74c90a5a6d39ce07b1,
+          m_ObjectArgument: {fileID: 2100000, guid: 8771c8ba6baad13428825b129a8e805b,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
@@ -172,7 +172,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1514814, z: 1.1734654}
   m_Center: {x: 0, y: 0.5774946, z: 0.37673265}
---- !u!114 &8319325376902475634
+--- !u!114 &148121032231417629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,7 +193,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -570,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 13700000, guid: 396a1cbeeeaebe946b9a8aca7b4dbdac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 70eb4e83e9b52c74c90a5a6d39ce07b1, type: 2}
+      objectReference: {fileID: 2100000, guid: 8771c8ba6baad13428825b129a8e805b, type: 2}
     - target: {fileID: 13700000, guid: 396a1cbeeeaebe946b9a8aca7b4dbdac, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
