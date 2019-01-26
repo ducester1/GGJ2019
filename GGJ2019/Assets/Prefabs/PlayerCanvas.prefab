@@ -106,11 +106,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 544487711753464622}
     m_Modifications:
-    - target: {fileID: 5825396966946517734, guid: ef117abae83dff248a3c75c0ee2f0e7f,
-        type: 3}
-      propertyPath: m_Name
-      value: damage_hud
-      objectReference: {fileID: 0}
     - target: {fileID: 5825396966946517753, guid: ef117abae83dff248a3c75c0ee2f0e7f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -215,6 +210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825396966946517734, guid: ef117abae83dff248a3c75c0ee2f0e7f,
+        type: 3}
+      propertyPath: m_Name
+      value: damage_hud
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef117abae83dff248a3c75c0ee2f0e7f, type: 3}

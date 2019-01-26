@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
     Animator animator;
     Transform playerTransform;
 
-    float walkingVelocity = 0.05f;
+    public float walkingVelocity = 0.00025f;
     float attackIdleTime = 3.0f;
     float maxAttackDistance = 2.0f;
 
@@ -48,45 +48,11 @@ public class EnemyController : MonoBehaviour
 
         this.transform.LookAt(PlayerController.Instance.transform);
 
-        //this.transform.eulerAngles.Set(
-        //    -90,
-        //    this.transform.eulerAngles.y,
-        //    0
-        //);
-
-
-        /*
-        this.transform.eulerAngles.Set(
-            this.transform.eulerAngles.x,
-            -this.getAngle(
-                new Vector2(this.transform.position.x, this.transform.position.z),
-                new Vector2(PlayerController.Instance.transform.position.x, PlayerController.Instance.transform.position.z)
-                ),
-            this.transform.eulerAngles.z
-        );
-        */
-
-        //Vector2 fromVector2 = new Vector2(0, 1);
-        //Vector2 toVector2 = new Vector2(-1, 0);
-
-        //float ang = Vector2.Angle(fromVector2, toVector2);
-        //Vector3 cross = Vector3.Cross(fromVector2, toVector2);
-
-        //if (cross.z > 0)
-        //ang = 360 - ang;
-
-
-        // Rotate towards player using Y-axis
-        //var lookPos = PlayerController.Instance.transform.position - this.transform.position;
-        //lookPos.x = -90;
-        //var rotation = Quaternion.LookRotation(lookPos);
-        //this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, 0.1f);
-        //this.transform.R
     }
 
     IEnumerator Attack()
     {
-        for (;;)
+        for (; ; )
         {
             if (this.IsInPlayerRange(this.maxAttackDistance))
             {
@@ -108,7 +74,7 @@ public class EnemyController : MonoBehaviour
     void DoAttack()
     {
         Debug.Log("Attacking the player!!!");
-        this.animator.SetInteger("attackState", Random.Range(1,5));
+        this.animator.SetInteger("attackState", Random.Range(1, 5));
 
     }
 
