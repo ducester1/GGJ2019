@@ -1,23 +1,14 @@
 fileFormatVersion: 2
-guid: 8c3cf7e0bbc1ac846aecef67068abb66
+guid: 2db682e6cf609044cb99d233f4b52f66
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: lit
-    100002: //RootNode
-    100004: trashcan
-    400000: lit
-    400002: //RootNode
-    400004: trashcan
+    100000: //RootNode
+    400000: //RootNode
     2100000: lambert1
-    2300000: lit
-    2300002: trashcan
-    3300000: lit
-    3300002: trashcan
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: trashcan
-    4300002: lit
-    7400000: Take 001
-    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -71,7 +62,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -98,7 +89,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
