@@ -62,15 +62,16 @@ public class SpawnSystem : MonoBehaviour
 
     void Spawn(GameObject prefab, GameObject spawnPoint)
     {
+        Debug.Log("SPAWNING");
         Vector3 p = spawnPoint.transform.position;
         p.y = 0;
-        GameObject e = Instantiate<GameObject>(prefab, p, Quaternion.identity);
+        GameObject e = Instantiate<GameObject>(prefab, p, prefab.transform.rotation);
         aliveEnemies.Add(e);
     }
 
     GameObject GetRandomFromArray(GameObject[] arr)
     {
-        return arr[Random.Range(0, arr.Length - 1)];
+        return arr[Random.Range(0, arr.Length)];
     }
 
     float getMaxEnemies()
