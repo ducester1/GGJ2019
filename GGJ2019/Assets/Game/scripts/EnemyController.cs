@@ -48,11 +48,11 @@ public class EnemyController : MonoBehaviour
 
         this.transform.LookAt(PlayerController.Instance.transform);
 
-        this.transform.eulerAngles.Set(
-            -90,
-            this.transform.eulerAngles.y,
-            0
-        );
+        //this.transform.eulerAngles.Set(
+        //    -90,
+        //    this.transform.eulerAngles.y,
+        //    0
+        //);
 
 
         /*
@@ -90,6 +90,7 @@ public class EnemyController : MonoBehaviour
         {
             if (this.IsInPlayerRange(this.maxAttackDistance))
             {
+                this.animator.SetInteger("walkState", 0);
                 this.DoAttack();
             }
             yield return new WaitForSeconds(this.attackIdleTime);
@@ -108,6 +109,7 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("Attacking the player!!!");
         this.animator.SetInteger("attackState", Random.Range(1,5));
+
     }
 
     float getAngle(Vector2 a, Vector2 b)
