@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
     Animator animator;
     Transform playerTransform;
 
-    public float walkingVelocity = 0.00025f;
+    float walkingVelocity = 0.015f;
     float attackIdleTime = 3.0f;
     float maxAttackDistance = 2.0f;
 
