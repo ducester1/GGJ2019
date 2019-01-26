@@ -11,7 +11,6 @@ public class HoboSelector : MonoBehaviour
 
     public void SelectCharacter(int sellectedNum)
     {
-        Debug.Log("Clicked");
         playerNum = sellectedNum;
         player.transform.position = new Vector3(0, 0, 0);
 
