@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     Animator animator;
     Transform playerTransform;
 
+    float walkingVelocity = 0.05f;
     float attackIdleTime = 3.0f;
     float maxAttackDistance = 2.0f;
 
@@ -32,8 +33,55 @@ public class EnemyController : MonoBehaviour
         // Player can execute movement
         if (this.animator.GetInteger("attackState") == 0)
         {
-            this.transform.Translate(this.transform.forward * -0.01f);
+            //this.transform.Translate(this.transform.forward * -0.01f);
+            this.MoveToPlayer();
         }
+    }
+
+    void MoveToPlayer()
+    {
+        this.transform.position = Vector3.MoveTowards(
+            this.transform.position,
+            PlayerController.Instance.transform.position,
+            this.walkingVelocity
+            );
+
+        this.transform.LookAt(PlayerController.Instance.transform);
+
+        this.transform.eulerAngles.Set(
+            -90,
+            this.transform.eulerAngles.y,
+            0
+        );
+
+
+        /*
+        this.transform.eulerAngles.Set(
+            this.transform.eulerAngles.x,
+            -this.getAngle(
+                new Vector2(this.transform.position.x, this.transform.position.z),
+                new Vector2(PlayerController.Instance.transform.position.x, PlayerController.Instance.transform.position.z)
+                ),
+            this.transform.eulerAngles.z
+        );
+        */
+
+        //Vector2 fromVector2 = new Vector2(0, 1);
+        //Vector2 toVector2 = new Vector2(-1, 0);
+
+        //float ang = Vector2.Angle(fromVector2, toVector2);
+        //Vector3 cross = Vector3.Cross(fromVector2, toVector2);
+
+        //if (cross.z > 0)
+        //ang = 360 - ang;
+
+
+        // Rotate towards player using Y-axis
+        //var lookPos = PlayerController.Instance.transform.position - this.transform.position;
+        //lookPos.x = -90;
+        //var rotation = Quaternion.LookRotation(lookPos);
+        //this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, 0.1f);
+        //this.transform.R
     }
 
     IEnumerator Attack()
@@ -60,5 +108,14 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("Attacking the player!!!");
         this.animator.SetInteger("attackState", Random.Range(1,5));
+    }
+
+    float getAngle(Vector2 a, Vector2 b)
+    {
+        var an = a.normalized;
+        var bn = b.normalized;
+        var x = an.x * bn.x + an.y * bn.y;
+        var y = an.y * bn.x - an.x * bn.y;
+        return Mathf.Atan2(y, x) * Mathf.Rad2Deg;
     }
 }
