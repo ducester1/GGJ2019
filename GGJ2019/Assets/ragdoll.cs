@@ -30,6 +30,8 @@ public class ragdoll : MonoBehaviour
         if (collisionInfo.gameObject.tag == "Weapon")
         {
             Damage(1);
+            AudioSource sound = collisionInfo.gameObject.GetComponent<AudioSource>();
+            sound.PlayOneShot(sound.clip);
         }
     }
     public void Damage(int damage)
