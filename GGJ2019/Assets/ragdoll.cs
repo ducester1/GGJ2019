@@ -11,8 +11,27 @@ public class ragdoll : MonoBehaviour
         Rigidbody[] bodies = GetComponentsInChildren<Rigidbody>();
         foreach (Rigidbody rb in bodies)
         {
-            rb.isKinematic = newValue;
+            //rb.isKinematic = newValue;
         }
+    }
+    void SetColliders(bool newValue)
+    {
+        BoxCollider[] boxes = GetComponentsInChildren<BoxCollider>();
+        foreach (BoxCollider bc in boxes)
+        {
+            bc.enabled = newValue;
+        }
+        CapsuleCollider[] caps = GetComponentsInChildren<CapsuleCollider>();
+        foreach (CapsuleCollider cc in caps)
+        {
+            cc.enabled = newValue;
+        }
+        SphereCollider[] spheres = GetComponentsInChildren<SphereCollider>();
+        foreach (SphereCollider sc in spheres)
+        {
+            sc.enabled = newValue;
+        }
+        GetComponent<CapsuleCollider>().enabled = true;
     }
     private void Update()
     {
@@ -20,7 +39,8 @@ public class ragdoll : MonoBehaviour
     }
     void Start()
     {
-        SetKinematic(true);
+        //SetKinematic(true);
+        SetColliders(false);
         hp = maxHp;
     }
     public void Damage(int damage)
@@ -31,9 +51,11 @@ public class ragdoll : MonoBehaviour
     }
     void Die()
     {
-        SetKinematic(false);
+        //SetKinematic(false);
+        SetColliders(true);
         GetComponent<Animator>().enabled = false;
         //GetComponent<CapsuleCollider>().enabled = false;
         Destroy(gameObject, 20);
     }
+
 }
