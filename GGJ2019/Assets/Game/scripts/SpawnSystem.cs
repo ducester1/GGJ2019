@@ -21,7 +21,7 @@ public class SpawnSystem : MonoBehaviour
     string[] waveInitText = { "Round1\nMonday", "Round2\nTuesday", "Round3\nWednesday", "Round4\nThursday", "Round5\nFriday" };
     string[] waveFinishText = { "Round1\nCompleted", "Round2\nCompleted", "Round3\nCompleted", "Round4\nCompleted", "Round5\nCompleted" };
 
-    int[] maxEnemyOnScreen = { 8, 10, 12, 14, 16 };
+    int[] maxEnemyOnScreen = { 2, 8, 12, 24, 36 };
     int[] spawnIdleTime = { 8, 6, 4, 2, 2 };
 
     int currentWave = 0;
@@ -30,11 +30,11 @@ public class SpawnSystem : MonoBehaviour
 
 
     // types from left to right
-    int[] enemyWave1 = { 8, 8, 0, 0 }; // round 1
-    int[] enemyWave2 = { 8, 8, 5, 0 }; // round 2
-    int[] enemyWave3 = { 8, 8, 5, 0 }; // round 3
-    int[] enemyWave4 = { 8, 8, 5, 0 }; // round 4
-    int[] enemyWave5 = { 8, 8, 5, 0 }; // round 5
+    int[] enemyWave1 = { 1, 0, 0, 0 }; // round 1
+    int[] enemyWave2 = { 2, 2, 1, 0 }; // round 2
+    int[] enemyWave3 = { 4, 4, 4, 4 }; // round 3
+    int[] enemyWave4 = { 8, 8, 8, 8 }; // round 4
+    int[] enemyWave5 = { 12, 12, 12, 12 }; // round 5
 
     public static SpawnSystem Instance { get; private set; }
     public static List<GameObject> aliveEnemies = new List<GameObject>();
@@ -78,6 +78,11 @@ public class SpawnSystem : MonoBehaviour
                     //    this.GetRandomFromArray(spawnPoints));
                 }
                 yield return new WaitForSeconds(this.spawnIdleTime[this.currentWave]);
+            }
+
+            while(SpawnSystem.aliveEnemies.Count > 1)
+            {
+                yield return new WaitForSeconds(1.0f);
             }
 
             // Do finish wave
