@@ -11,40 +11,21 @@ public class ragdoll : MonoBehaviour
         Rigidbody[] bodies = GetComponentsInChildren<Rigidbody>();
         foreach (Rigidbody rb in bodies)
         {
-            //rb.isKinematic = newValue;
+            rb.isKinematic = newValue;
         }
     }
-    void SetColliders(bool newValue)
-    {
-        BoxCollider[] boxes = GetComponentsInChildren<BoxCollider>();
-        foreach (BoxCollider bc in boxes)
-        {
-            bc.enabled = newValue;
-        }
-        CapsuleCollider[] caps = GetComponentsInChildren<CapsuleCollider>();
-        foreach (CapsuleCollider cc in caps)
-        {
-            cc.enabled = newValue;
-        }
-        SphereCollider[] spheres = GetComponentsInChildren<SphereCollider>();
-        foreach (SphereCollider sc in spheres)
-        {
-            sc.enabled = newValue;
-        }
-        GetComponent<CapsuleCollider>().enabled = true;
-    }
+
     private void Update()
     {
         if (hp <= 0) Die();
     }
     void Start()
     {
-        //SetKinematic(true);
-        SetColliders(false);
+        SetKinematic(true);
         hp = maxHp;
     }
 
-    void OnCollisionEnter(Collision collisionInfo)
+    void OnTriggerEnter(Collider collisionInfo)
     {
         if (collisionInfo.gameObject.tag == "Weapon")
         {
@@ -59,11 +40,9 @@ public class ragdoll : MonoBehaviour
     }
     void Die()
     {
-        //SetKinematic(false);
-        SetColliders(true);
+        SetKinematic(false);
         GetComponent<Animator>().enabled = false;
-        //GetComponent<CapsuleCollider>().enabled = false;
-        Destroy(gameObject, 20);
+        Destroy(gameObject, 6);
     }
 
 }

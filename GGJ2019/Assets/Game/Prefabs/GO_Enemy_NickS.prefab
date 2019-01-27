@@ -1474,6 +1474,7 @@ GameObject:
   - component: {fileID: 1301338564}
   - component: {fileID: 1025722038765539281}
   - component: {fileID: 5075885586442557661}
+  - component: {fileID: 668950565454691893}
   m_Layer: 10
   m_Name: GO_Enemy_NickS
   m_TagString: badStuff
@@ -1705,6 +1706,20 @@ MonoBehaviour:
   audioSource: {fileID: 1025722038765539281}
   MinPitch: 0.7
   MaxPitch: 1.3
+--- !u!136 &668950565454691893
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271989586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.36
+  m_Height: 1.7602378
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8993976, z: 0}
 --- !u!1 &1286858586
 GameObject:
   m_ObjectHideFlags: 0
