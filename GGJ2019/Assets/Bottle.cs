@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Bottle : MonoBehaviour
 {
+    private float minHeight;
+    private bool respawned;
     public Vector3 initPos;
     public Quaternion initRot;
 
     // Start is called before the first frame update
     void Start()
     {
+        respawned = false;
+        minHeight = 0.3f;
         initPos = this.transform.position;
         initRot = this.transform.rotation;
     }
@@ -17,16 +21,16 @@ public class Bottle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (this.transform.position.y < minHeight && respawned == false)
+        {
+            spawn();
+        }
     }
 
     public void spawn()
     {
+        respawned = true;
         Instantiate(this, initPos, initRot);
-    }
-
-    public void pickUp()
-    {
-        this.GetComponent<Rigidbody>().isKinematic = false;
+        Destroy(gameObject, 5);
     }
 }

@@ -109,6 +109,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 846111027, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111028, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: estimateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
 --- !u!4 &1001481244129220364 stripped
@@ -187,6 +195,14 @@ PrefabInstance:
     - target: {fileID: 846111029, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111027, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111028, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: estimateOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
@@ -267,6 +283,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 846111027, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111028, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: estimateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
 --- !u!4 &1183423634128190287 stripped
@@ -345,6 +369,14 @@ PrefabInstance:
     - target: {fileID: 846111029, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111027, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111028, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: estimateOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
@@ -425,6 +457,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 846111027, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111028, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: estimateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
 --- !u!4 &2439513107290146205 stripped
@@ -503,6 +543,14 @@ PrefabInstance:
     - target: {fileID: 846111029, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111027, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111028, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: estimateOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
@@ -583,6 +631,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 846111027, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111028, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: estimateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
 --- !u!4 &7512712972631610072 stripped
@@ -661,6 +717,14 @@ PrefabInstance:
     - target: {fileID: 846111029, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111027, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846111028, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
+      propertyPath: estimateOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a46131e25061a74b86cbf180e929d65, type: 3}
