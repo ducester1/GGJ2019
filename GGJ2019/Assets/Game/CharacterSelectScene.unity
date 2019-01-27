@@ -377,6 +377,8 @@ MonoBehaviour:
     type: 3}
   beers: {fileID: 1446082687771798429, guid: 621aa8940f571ef499b2b9b3710cd514, type: 3}
   guitar: {fileID: 2885600915745544414, guid: bc3a3749348365142ae65fe3940e5748, type: 3}
+  shoppingcart: {fileID: 279410790621188146, guid: 95f00c87a234f0e48aa081e3e45cd2e1,
+    type: 3}
 --- !u!1001 &147711595
 PrefabInstance:
   m_ObjectHideFlags: 0
