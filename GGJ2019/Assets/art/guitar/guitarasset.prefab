@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1917685180}
   - component: {fileID: 1917685182}
   - component: {fileID: 1917685181}
+  - component: {fileID: 8100779324095107248}
   m_Layer: 0
   m_Name: guitarasset
   m_TagString: Untagged
@@ -112,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7418c7dd8f977d4e969202d3fa7e926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poseEditorExpanded: 1
+  poseEditorExpanded: 0
   blendEditorExpanded: 0
   poseNames:
   - guitarPose (MAIN)
@@ -251,3 +252,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.605545, y: 65.55843, z: 13.686754}
   m_Center: {x: -0.000008381902, y: 109.30558, z: 0.0103516495}
+--- !u!114 &8100779324095107248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2885600915745544414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a2b723daabe4e45a914c7c9fe11183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initPos: {x: 0, y: 0, z: 0}
+  initRot: {x: 0, y: 0, z: 0, w: 0}
+  asset: {fileID: 2885600915745544414}
