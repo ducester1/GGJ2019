@@ -16,22 +16,21 @@ public class SpawnSystem : MonoBehaviour
     float gameActiveTime = 0.0f;
 
     float waveInitTime = 4.0f;
-    float waveFinishTime = 4.0f;
+    float waveFinishTime = 4.6f;
 
     string[] waveInitText = { "Round1\nMonday", "Round2\nTuesday", "Round3\nWednesday", "Round4\nThursday", "Round5\nFriday" };
     string[] waveFinishText = { "Round1\nCompleted", "Round2\nCompleted", "Round3\nCompleted", "Round4\nCompleted", "Round5\nCompleted" };
 
-    int[] maxEnemyOnScreen = { 2, 8, 12, 24, 36 };
+    int[] maxEnemyOnScreen = { 4, 8, 12, 24, 36 };
     int[] spawnIdleTime = { 8, 6, 4, 2, 2 };
 
     int currentWave = 0;
     int nSpawnedEnemiesWave = 0;
     int lastSpawnPoint = 0;
 
-
     // types from left to right
-    int[] enemyWave1 = { 1, 0, 0, 0 }; // round 1
-    int[] enemyWave2 = { 2, 2, 1, 0 }; // round 2
+    int[] enemyWave1 = { 1, 1, 1, 1 }; // round 1
+    int[] enemyWave2 = { 3, 3, 2, 2 }; // round 2
     int[] enemyWave3 = { 4, 4, 4, 4 }; // round 3
     int[] enemyWave4 = { 8, 8, 8, 8 }; // round 4
     int[] enemyWave5 = { 12, 12, 12, 12 }; // round 5
@@ -121,13 +120,13 @@ public class SpawnSystem : MonoBehaviour
     {
         switch (wave)
         {
-            case 0: return enemyWave1;
-            case 1: return enemyWave2;
-            case 2: return enemyWave3;
-            case 3: return enemyWave4;
-            case 4: return enemyWave5;
+            case 0: return this.enemyWave1;
+            case 1: return this.enemyWave2;
+            case 2: return this.enemyWave3;
+            case 3: return this.enemyWave4;
+            case 4: return this.enemyWave5;
         }
-        return enemyWave1;
+        return this.enemyWave1;
     }
 
     int GetWaveSize(int[] wave)
