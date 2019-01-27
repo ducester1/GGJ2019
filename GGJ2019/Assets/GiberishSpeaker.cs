@@ -8,6 +8,8 @@ public class GiberishSpeaker : MonoBehaviour
 {
     public AudioClip[] mouthSounds;
     public AudioSource audioSource;
+    public float MinPitch;
+    public float MaxPitch;
 
     private int tempSound;
     
@@ -15,6 +17,7 @@ public class GiberishSpeaker : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.pitch = Random.Range(MinPitch, MaxPitch);
         PlaySound(Random.Range(0, mouthSounds.Length));
 
     }
@@ -32,8 +35,17 @@ public class GiberishSpeaker : MonoBehaviour
 
     public void PlaySound(int index)
     {
-        audioSource.clip = mouthSounds[index];
-        audioSource.PlayOneShot(audioSource.clip);
+        if(index == tempSound)
+        {
+            PlaySound(Random.Range(0, mouthSounds.Length));
+        }
+        else
+        {
+            tempSound = index;
+            audioSource.clip = mouthSounds[index];
+            audioSource.PlayOneShot(audioSource.clip);
+        }
+
 
     }
 }
