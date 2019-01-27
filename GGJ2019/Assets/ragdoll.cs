@@ -43,6 +43,14 @@ public class ragdoll : MonoBehaviour
         SetColliders(false);
         hp = maxHp;
     }
+
+    void OnCollisionEnter(Collision collisionInfo)
+    {
+        if (collisionInfo.gameObject.tag == "Weapon")
+        {
+            Damage(1);
+        }
+    }
     public void Damage(int damage)
     {
         if (hp <= 0) return;

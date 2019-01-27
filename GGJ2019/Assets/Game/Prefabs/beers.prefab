@@ -50,6 +50,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: beer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6235815637099612350, guid: 6a46131e25061a74b86cbf180e929d65,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 617071261870212978, guid: 6a46131e25061a74b86cbf180e929d65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -136,6 +141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: beer (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235815637099612350, guid: 6a46131e25061a74b86cbf180e929d65,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 617071261870212978, guid: 6a46131e25061a74b86cbf180e929d65,
         type: 3}
@@ -224,6 +234,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: beer (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6235815637099612350, guid: 6a46131e25061a74b86cbf180e929d65,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 617071261870212978, guid: 6a46131e25061a74b86cbf180e929d65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -310,6 +325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: beer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235815637099612350, guid: 6a46131e25061a74b86cbf180e929d65,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 617071261870212978, guid: 6a46131e25061a74b86cbf180e929d65,
         type: 3}
@@ -398,6 +418,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: beer (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6235815637099612350, guid: 6a46131e25061a74b86cbf180e929d65,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 617071261870212978, guid: 6a46131e25061a74b86cbf180e929d65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -484,6 +509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: beer (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235815637099612350, guid: 6a46131e25061a74b86cbf180e929d65,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 617071261870212978, guid: 6a46131e25061a74b86cbf180e929d65,
         type: 3}
@@ -572,6 +602,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: beer (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6235815637099612350, guid: 6a46131e25061a74b86cbf180e929d65,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 617071261870212978, guid: 6a46131e25061a74b86cbf180e929d65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -658,6 +693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: beer (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235815637099612350, guid: 6a46131e25061a74b86cbf180e929d65,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 617071261870212978, guid: 6a46131e25061a74b86cbf180e929d65,
         type: 3}
