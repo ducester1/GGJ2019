@@ -23,7 +23,7 @@ public class Resetter : MonoBehaviour
 
     void Update()
     {
-        if (this.transform.position.y < minHeight && Vector3.Distance(player.transform.position, transform.position) > 1.5 && !once)
+        if (this.transform.position.y < minHeight && Vector3.Distance(player.transform.position, transform.position) > 1.5 && !once && GetComponent<Rigidbody>().isKinematic == false)
         {
             once = true;
             Instantiate(asset, initPos, initRot);
