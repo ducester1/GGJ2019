@@ -31,6 +31,6 @@ public class Bottle : MonoBehaviour
     {
         respawned = true;
         Instantiate(this, initPos, initRot);
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 3);
     }
 }
