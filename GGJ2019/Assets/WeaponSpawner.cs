@@ -10,6 +10,7 @@ public class WeaponSpawner : MonoBehaviour
     public GameObject spawnPoint;
     public GameObject beers;
     public GameObject guitar;
+    public GameObject shoppingcart;
 
     List<GameObject> beerBottles;
     int maxBeerBottles;
@@ -32,6 +33,9 @@ public class WeaponSpawner : MonoBehaviour
                     break;
                 case 1:
                     Instantiate(guitar, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                    break;
+                case 2:
+                    Instantiate(shoppingcart, new Vector3(0f, 1.5f, 0.3f), spawnPoint.transform.rotation);
                     break;
                 default: break;
             }

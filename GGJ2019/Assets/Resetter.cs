@@ -23,7 +23,6 @@ public class Resetter : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Vector3.Distance(player.transform.position, transform.position));
         if (this.transform.position.y < minHeight && Vector3.Distance(player.transform.position, transform.position) > 1.5 && !once)
         {
             once = true;
