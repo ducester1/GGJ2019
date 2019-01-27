@@ -7,6 +7,8 @@ TagManager:
   - projectile
   - FxTemporaire
   - badStuff
+  - Weapon
+  - Ignore
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - enemy kinematic
+  - enemy nonkinematic
   - 
   - 
   - 
