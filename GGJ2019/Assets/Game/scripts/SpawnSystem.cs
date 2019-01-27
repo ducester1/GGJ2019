@@ -7,34 +7,90 @@ public class SpawnSystem : MonoBehaviour
 
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private GameObject[] spawnPoints;
+    ///[SerializeField] private AnimationCurve maxEnemyCurve;
+    ///[SerializeField] private AnimationCurve spawnIdleCurve;
 
-    [SerializeField] private AnimationCurve maxEnemyCurve;
-    [SerializeField] private AnimationCurve spawnIdleCurve;
+    [SerializeField] private TextMesh spawnText;
 
     public bool isActive = true;
-
     float gameActiveTime = 0.0f;
 
-    public static SpawnSystem Instance
-    {
-        get; private set;
-    }
+    float waveInitTime = 4.0f;
+    float waveFinishTime = 4.0f;
 
+    string[] waveInitText = { "Round1\nMonday", "Round2\nTuesday", "Round3\nWednesday", "Round4\nThursday", "Round5\nFriday" };
+    string[] waveFinishText = { "Round1\nCompleted", "Round2\nCompleted", "Round3\nCompleted", "Round4\nCompleted", "Round5\nCompleted" };
+
+    int[] maxEnemyOnScreen = { 8, 10, 12, 14, 16 };
+    int[] spawnIdleTime = { 8, 6, 4, 2, 2 };
+
+    int currentWave = 0;
+    int nSpawnedEnemiesWave = 0;
+    int lastSpawnPoint = 0;
+
+
+    // types from left to right
+    int[] enemyWave1 = { 8, 8, 0, 0 }; // round 1
+    int[] enemyWave2 = { 8, 8, 5, 0 }; // round 2
+    int[] enemyWave3 = { 8, 8, 5, 0 }; // round 3
+    int[] enemyWave4 = { 8, 8, 5, 0 }; // round 4
+    int[] enemyWave5 = { 8, 8, 5, 0 }; // round 5
+
+    public static SpawnSystem Instance { get; private set; }
     public static List<GameObject> aliveEnemies = new List<GameObject>();
 
-    private void Awake()
-    {
-        if(SpawnSystem.Instance == null)
-        {
-            SpawnSystem.Instance = this;
-        }
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-        this.isActive = true;
-        StartCoroutine(this.onSpawn());
+        if (SpawnSystem.Instance == null) SpawnSystem.Instance = this;
+        StartCoroutine(this.DoWave());
+    }
+
+    IEnumerator DoWave()
+    {
+        for (;;)
+        {
+            //int[] waveEnemies = this.GetEnemyWave(this.currentWave);
+            //int waveTotalEnemies = this.GetWaveSize(waveEnemies);
+            int[] waveEnemies = this.GetShuffleSpawnList(this.GetEnemyWave(this.currentWave));
+            int waveTotalEnemies = waveEnemies.Length;
+
+            // Do init wave
+            this.spawnText.text = this.waveInitText[this.currentWave];
+            this.spawnText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(this.waveInitTime);
+            this.spawnText.gameObject.SetActive(false);
+
+            // Do main wave
+            while (this.nSpawnedEnemiesWave < waveTotalEnemies)
+            {
+                if(SpawnSystem.aliveEnemies.Count < this.maxEnemyOnScreen[this.currentWave])
+                {
+                    int spawnNumber = 0;
+                    do
+                    {
+                        spawnNumber = Random.Range(0, spawnPoints.Length);
+                    } while (this.lastSpawnPoint == spawnNumber);
+
+                    this.Spawn(this.enemyPrefabs[waveEnemies[this.nSpawnedEnemiesWave++]], spawnPoints[spawnNumber]);
+
+                    //this.Spawn(
+                    //    this.GetRandomFromArray(enemyPrefabs),
+                    //    this.GetRandomFromArray(spawnPoints));
+                }
+                yield return new WaitForSeconds(this.spawnIdleTime[this.currentWave]);
+            }
+
+            // Do finish wave
+            this.spawnText.text = this.waveFinishText[this.currentWave];
+            this.spawnText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(this.waveFinishTime);
+            this.spawnText.gameObject.SetActive(false);
+
+            this.nSpawnedEnemiesWave = 0;
+            this.currentWave++;
+
+            if (this.currentWave > 5) break;
+        }
     }
 
     private void Update()
@@ -42,27 +98,9 @@ public class SpawnSystem : MonoBehaviour
         this.gameActiveTime += Time.deltaTime;
     }
 
-    IEnumerator onSpawn()
-    {
-        for(;;)
-        {
-            if (this.isActive)
-            {
-                if (aliveEnemies.Count < this.getMaxEnemies())
-                {
-                    this.Spawn(
-                        this.GetRandomFromArray(enemyPrefabs),
-                        this.GetRandomFromArray(spawnPoints));
-                }
-            }
-
-            yield return new WaitForSeconds(this.getIdleTime());
-        }
-    }
-
     void Spawn(GameObject prefab, GameObject spawnPoint)
     {
-        Debug.Log("SPAWNING");
+        //Debug.Log("SPAWNING");
         Vector3 p = spawnPoint.transform.position;
         p.y = 0;
         GameObject e = Instantiate<GameObject>(prefab, p, prefab.transform.rotation);
@@ -74,17 +112,48 @@ public class SpawnSystem : MonoBehaviour
         return arr[Random.Range(0, arr.Length)];
     }
 
-    float getMaxEnemies()
+    int[] GetEnemyWave(int wave)
     {
-        // Update this with a GameController variable!
-        // Configured from 0 - 30
-        return this.maxEnemyCurve.Evaluate(this.gameActiveTime);
+        switch (wave)
+        {
+            case 0: return enemyWave1;
+            case 1: return enemyWave2;
+            case 2: return enemyWave3;
+            case 3: return enemyWave4;
+            case 4: return enemyWave5;
+        }
+        return enemyWave1;
     }
 
-    float getIdleTime()
+    int GetWaveSize(int[] wave)
     {
-        // Update this with a GameController variable!
-        return 4.0f * this.spawnIdleCurve.Evaluate(this.gameActiveTime);
+        int total = 0;
+        for (int i = 0; i < wave.Length; i++)
+        {
+            total += wave[i];
+        }
+        return total;
+    }
+
+    int[] GetShuffleSpawnList(int[] amounts)
+    {
+        List<int> l = new List<int>();
+
+        for(int i = 0; i < amounts.Length; i++)
+            for (int j = 0; j < amounts[i]; j++)
+                l.Add(i);
+
+        List<int> rl = new List<int>();
+
+        int randomIndex = 0;
+        while (l.Count > 0)
+        {
+            randomIndex = Random.Range(0, l.Count); // Choose a random object in the list
+            rl.Add(l[randomIndex]); // add it to the new, random list
+            l.RemoveAt(randomIndex); // remove to avoid duplicates
+        }
+
+        return rl.ToArray(); //return the new random list
     }
 
 }

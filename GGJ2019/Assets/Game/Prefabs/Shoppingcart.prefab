@@ -246,6 +246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cart
       objectReference: {fileID: 0}
+    - target: {fileID: 5956962204481759116, guid: 1a73ebae08e31594e8bf3a96707a4ce5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 3103800407840412110, guid: 1a73ebae08e31594e8bf3a96707a4ce5,
         type: 3}
       propertyPath: m_LocalPosition.x

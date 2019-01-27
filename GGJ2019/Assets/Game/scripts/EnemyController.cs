@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         // Player can execute movement
-        if (this.animator.GetInteger("attackState") == 0)
+        if (this.animator.GetInteger("attackState") == 0 && this.animator.enabled == true)
         {
             //this.transform.Translate(this.transform.forward * -0.01f);
             this.MoveToPlayer();
